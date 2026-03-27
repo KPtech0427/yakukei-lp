@@ -1,0 +1,37 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.hero {
+  background: #f5f7fb;
+  padding: 40px;
+  text-align: center;
+}
+
+.flow {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+section {
+  padding: 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.cta {
+  background: #e6f0ff;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
