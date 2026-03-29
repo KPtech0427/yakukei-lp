@@ -546,6 +546,39 @@
       gap: 10px;
     }
 
+    .line-redirect-note {
+      margin: 14px 0 0;
+      color: #ecf7ff;
+      font-size: 0.93rem;
+    }
+
+    .line-qr-desktop {
+      display: none;
+      margin: 18px auto 0;
+      width: fit-content;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: var(--radius-md);
+      padding: 14px;
+    }
+
+    .line-qr-desktop p {
+      margin: 0 0 10px;
+      color: #ecf7ff;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .line-qr-desktop img {
+      width: 180px;
+      height: 180px;
+      border-radius: 10px;
+      background: #fff;
+      padding: 8px;
+      margin-inline: auto;
+    }
+
     .final-cta .btn-secondary {
       background: rgba(255, 255, 255, 0.18);
       border-color: rgba(255, 255, 255, 0.3);
@@ -615,6 +648,7 @@
       .benefit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .problem-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .line-qr-desktop { display: block; }
     }
   </style>
 </head>
@@ -635,7 +669,7 @@
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </nav>
-      <a class="btn btn-cta" href="#contact">導入相談</a>
+      <a class="btn btn-cta" href="https://lin.ee/Oy4qC71" target="_blank" rel="noopener noreferrer">導入相談（LINE）</a>
     </div>
   </header>
 
@@ -962,10 +996,15 @@
         <h2 id="cta-title">まずは導入相談から、お気軽にお問い合わせください</h2>
         <p class="section-intro">「自店舗でどう運用できるか」を確認したい段階でも問題ありません。資料請求・お問い合わせ・導入相談をご用意しています。</p>
         <div class="cta-actions">
-          <a class="btn btn-cta" href="#">導入相談をする</a>
+          <a class="btn btn-cta" href="https://lin.ee/Oy4qC71" target="_blank" rel="noopener noreferrer">導入相談をする（LINE）</a>
           <a class="btn btn-secondary" href="https://demo.yakukei.com/admin" target="_blank" rel="noopener noreferrer">まずはデモを確認する</a>
           <a class="btn btn-secondary" href="#">資料請求</a>
           <a class="btn btn-secondary" href="#">お問い合わせ</a>
+        </div>
+        <p class="line-redirect-note">※ 導入相談ボタンを押すと、LINE公式アカウントへ移動します。</p>
+        <div class="line-qr-desktop" aria-label="PC利用者向けLINE公式アカウントQRコード">
+          <p>PCをご利用の方は、こちらのQRコードをスマートフォンで読み取ってLINE公式へアクセスできます。</p>
+          <img src="https://qr-official.line.me/gs/M_837hwzgi_GW.png?oat_content=qr" alt="薬慶 LINE公式アカウント QRコード" loading="lazy">
         </div>
       </div>
     </section>
