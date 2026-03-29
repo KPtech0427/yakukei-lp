@@ -185,6 +185,13 @@
       background: linear-gradient(135deg, var(--cta) 0%, #22b585 100%);
     }
 
+    .header-consult-btn {
+      white-space: nowrap;
+      padding: 12px 20px;
+      font-size: 0.98rem;
+      flex-shrink: 0;
+    }
+
     /* Hero */
     .hero {
       padding: 52px 0 24px;
@@ -641,6 +648,18 @@
       }
     }
 
+    @media (max-width: 759px) {
+      .header-inner {
+        gap: 10px;
+      }
+
+      .header-consult-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        min-height: 52px;
+      }
+    }
+
     @media (min-width: 1024px) {
       .section { padding: 96px 0; }
       .hero { padding-top: 64px; }
@@ -669,7 +688,7 @@
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </nav>
-      <a class="btn btn-cta" href="https://lin.ee/Oy4qC71" target="_blank" rel="noopener noreferrer">導入相談（LINE）</a>
+      <a class="btn btn-cta header-consult-btn" href="https://lin.ee/Oy4qC71" target="_blank" rel="noopener noreferrer">LINEで導入相談</a>
     </div>
   </header>
 
@@ -682,8 +701,8 @@
           <h1 id="hero-title">LINE受付から自動印刷まで。<br>薬局業務の流れに沿って、処方箋対応をスムーズに。</h1>
           <p>患者さまはLINEで送りやすく、薬局側は受信確認・自動印刷・必要時の再印刷まで進めやすい設計です。調剤業務と並行しやすい受付導線で、現場運用の安定化を支援します。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">資料請求する</a>
-            <a class="btn btn-secondary" href="https://demo.yakukei.com/admin" target="_blank" rel="noopener noreferrer">デモを見る</a>
+            <a class="btn btn-primary" href="https://demo.yakukei.com/admin" target="_blank" rel="noopener noreferrer">デモを見る</a>
+            <a class="btn btn-cta" href="https://lin.ee/Oy4qC71" target="_blank" rel="noopener noreferrer">LINEで導入相談</a>
             <a class="btn btn-secondary" href="#service">サービスを見る</a>
           </div>
         </div>
@@ -994,11 +1013,10 @@
       <div class="container">
         <span class="tag" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.35);">Contact</span>
         <h2 id="cta-title">まずは導入相談から、お気軽にお問い合わせください</h2>
-        <p class="section-intro">「自店舗でどう運用できるか」を確認したい段階でも問題ありません。資料請求・お問い合わせ・導入相談をご用意しています。</p>
+        <p class="section-intro">「自店舗でどう運用できるか」を確認したい段階でも問題ありません。導入相談・お問い合わせの両方をご用意しています。</p>
         <div class="cta-actions">
-          <a class="btn btn-cta" href="https://lin.ee/Oy4qC71" target="_blank" rel="noopener noreferrer">導入相談をする（LINE）</a>
           <a class="btn btn-secondary" href="https://demo.yakukei.com/admin" target="_blank" rel="noopener noreferrer">まずはデモを確認する</a>
-          <a class="btn btn-secondary" href="#">資料請求</a>
+          <a class="btn btn-cta" href="https://lin.ee/Oy4qC71" target="_blank" rel="noopener noreferrer">LINEで導入相談</a>
           <a class="btn btn-secondary" href="#">お問い合わせ</a>
         </div>
         <p class="line-redirect-note">※ 導入相談ボタンを押すと、LINE公式アカウントへ移動します。</p>
