@@ -6,7 +6,6 @@
 ## ファイル構成
 
 - `index.html` : LP本体（セクション構成・文言・CTA・図解）
-- `style.css` : デザインとレスポンシブスタイル
 - `404.html` : Firebase Hosting の404ページ
 - `firebase.json` / `.firebaserc` : Firebase設定
 
@@ -55,7 +54,7 @@ firebase deploy --only hosting
 - 安心感セクション
 - CTA文言
 
-必要に応じて配色や余白は `style.css` で調整してください。
+配色や余白などのスタイルは `index.html` 内の `<style>` セクションを調整してください。
 
 ## 問い合わせボタンリンクの変更箇所
 
