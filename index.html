@@ -585,6 +585,34 @@
       background: #f4f9ff;
     }
 
+    /* Security note */
+    .trust-note {
+      padding: 36px 0 24px;
+    }
+
+    .trust-box {
+      background: #f7fafd;
+      border: 1px solid #dce8f4;
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .trust-box h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.18rem, 1rem + 0.8vw, 1.45rem);
+      line-height: 1.5;
+    }
+
+    .trust-points {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text-soft);
+      display: grid;
+      gap: 6px;
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
     /* Final CTA */
     .final-cta {
       background: linear-gradient(145deg, #0f5da6 0%, #1678c7 52%, #17957a 100%);
@@ -682,6 +710,13 @@
       margin: 0;
       font-size: 0.8rem;
       color: #9ab2c8;
+    }
+
+    .footer-security-note {
+      margin: 10px 0 0;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: #b8cadd;
     }
 
     @media (min-width: 760px) {
@@ -1106,6 +1141,21 @@
       </div>
     </section>
 
+    <!-- Security Note Section -->
+    <section class="trust-note" aria-labelledby="trust-note-title">
+      <div class="container">
+        <div class="trust-box">
+          <h2 id="trust-note-title">安心してご利用いただくために</h2>
+          <ul class="trust-points">
+            <li>薬局向けサービスとして、個人情報の取り扱いに配慮した設計を行っています。</li>
+            <li>通信の安全性に配慮した運用を行っています。</li>
+            <li>データは店舗ごとに管理し、信頼性の高いクラウド環境（Google Cloud）で取り扱っています。</li>
+            <li>必要以上に情報を保持しない運用を心がけています。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Final CTA Section -->
     <section id="contact" class="section final-cta" aria-labelledby="cta-title">
       <div class="container">
@@ -1139,6 +1189,7 @@
           <a href="#">利用規約</a>
           <a href="#contact">お問い合わせ</a>
         </nav>
+        <p class="footer-security-note">個人情報の取り扱いに配慮し、安心してご利用いただける運用を大切にしています。</p>
         <p class="copyright">© 2026 Medical Flow Co., Ltd. All Rights Reserved.</p>
       </div>
     </div>
