@@ -478,6 +478,55 @@
       font-size: 1.01rem;
     }
 
+    /* Pricing */
+    .pricing-wrap {
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(23, 67, 112, 0.06);
+    }
+
+    .pricing-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .price-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: var(--text-soft);
+      font-size: 0.99rem;
+    }
+
+    .price-list strong {
+      color: var(--text);
+      font-size: 1.03rem;
+    }
+
+    .pricing-note {
+      margin: 18px 0 0;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid #d9e8f4;
+      background: #f7fbff;
+      color: var(--text-soft);
+      font-size: 0.96rem;
+    }
+
+    .pricing-note strong {
+      color: var(--text);
+    }
+
     /* FAQ */
     .faq-list {
       margin-top: 24px;
@@ -640,7 +689,8 @@
       .hero-wrap { grid-template-columns: 1.1fr 0.9fr; align-items: center; }
       .problem-grid,
       .card-grid,
-      .benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .benefit-grid,
+      .pricing-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .scene-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .footer-grid {
         grid-template-columns: 1.5fr 1fr;
@@ -923,6 +973,46 @@
             <a class="btn btn-primary" href="https://demo.yakukei.com/admin" target="_blank" rel="noopener noreferrer">管理画面デモを試す</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" aria-labelledby="pricing-title">
+      <div class="container">
+        <span class="tag">料金・導入</span>
+        <h2 id="pricing-title">料金・導入について</h2>
+        <p class="section-intro">料金体系と導入方法を明確にし、導入時の判断がしやすいよう整理しています。個人開発ならではの価格設計と、運用時の注意点もあわせてご案内します。</p>
+        <div class="pricing-wrap">
+          <article class="pricing-card">
+            <h3>料金</h3>
+            <ul class="price-list">
+              <li>年間利用料：<strong>36,000円</strong></li>
+              <li>初年度価格：<strong>29,800円</strong></li>
+            </ul>
+          </article>
+          <article class="pricing-card">
+            <h3>導入方法</h3>
+            <ul class="price-list">
+              <li>ご自身で設定：<strong>無料</strong></li>
+              <li>導入サポート：<strong>1時間 10,000円</strong></li>
+            </ul>
+          </article>
+          <article class="pricing-card">
+            <h3>特徴</h3>
+            <ul class="price-list">
+              <li>個人開発のため、運用コストを抑えた価格設定を目指しています。</li>
+              <li>小規模薬局でも導入しやすい料金と手順を重視しています。</li>
+            </ul>
+          </article>
+          <article class="pricing-card">
+            <h3>ご確認いただきたい点</h3>
+            <ul class="price-list">
+              <li>個人開発のため、状況によっては即時対応が難しい場合があります。</li>
+              <li>その分、継続しやすい価格帯を維持できるよう調整しています。</li>
+            </ul>
+          </article>
+        </div>
+        <p class="pricing-note"><strong>補足：</strong>導入前に運用体制やサポート範囲を確認したい場合は、LINEで事前にご相談ください。無理のない導入計画を一緒に整理します。</p>
       </div>
     </section>
 
