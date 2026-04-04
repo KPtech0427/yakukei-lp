@@ -582,6 +582,7 @@
       place-items: center;
       padding: 18px;
       background: rgba(5, 12, 24, 0.72);
+      pointer-events: auto;
     }
 
     .patient-video-modal[hidden] {
@@ -595,6 +596,7 @@
       padding: 14px 14px 10px;
       position: relative;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.38);
+      pointer-events: auto;
     }
 
     .patient-video-modal:not([hidden]) .patient-video-dialog {
@@ -616,6 +618,7 @@
       position: absolute;
       top: 8px;
       right: 8px;
+      z-index: 10;
       width: 34px;
       height: 34px;
       border-radius: 50%;
@@ -1462,7 +1465,12 @@
       }
     });
 
-    patientVideoClose?.addEventListener('click', closePatientVideoModal);
+    if (patientVideoClose) {
+      patientVideoClose.addEventListener('click', (event) => {
+        event.stopPropagation();
+        closePatientVideoModal();
+      });
+    }
 
     patientVideoModal?.addEventListener('click', (event) => {
       if (event.target === patientVideoModal) {
