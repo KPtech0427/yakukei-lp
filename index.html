@@ -497,6 +497,41 @@
       font-size: 1.01rem;
     }
 
+    /* Patient demo */
+    .patient-demo-wrap {
+      margin-top: 26px;
+      display: grid;
+      gap: 16px;
+      justify-items: center;
+    }
+
+    .patient-demo-note {
+      margin: 0;
+      max-width: 760px;
+      color: var(--text-soft);
+      text-align: center;
+      font-size: 0.98rem;
+    }
+
+    .patient-video-card {
+      width: min(100%, 400px);
+      border-radius: 22px;
+      border: 1px solid #dbe7f5;
+      background: #fff;
+      box-shadow: 0 14px 26px rgba(20, 63, 107, 0.12);
+      padding: 10px;
+    }
+
+    .patient-video-card video {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid #e2eaf3;
+      background: #000;
+      aspect-ratio: 9 / 19.5;
+      object-fit: cover;
+    }
+
     /* Pricing */
     .pricing-wrap {
       margin-top: 24px;
@@ -1022,6 +1057,23 @@
           <li>少人数でも無理なく回せる受付運用を整えたい薬局</li>
           <li>LINEを活用したいが、できるだけシンプルに始めたい店舗</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- Patient Demo Section -->
+    <section class="section" aria-labelledby="patient-demo-title">
+      <div class="container">
+        <span class="tag">患者側の操作イメージ</span>
+        <h2 id="patient-demo-title">患者側の操作イメージ</h2>
+        <p class="section-intro">患者さんはLINEから数ステップで簡単に処方箋画像を送信できます。</p>
+        <div class="patient-demo-wrap">
+          <div class="patient-video-card">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="患者さんがLINEから処方箋画像を送信する操作イメージ動画">
+              <source src="line-prescription-demo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="patient-demo-note">患者さんが使いやすい受付の流れを、動画でご確認いただけます。</p>
+        </div>
       </div>
     </section>
 
