@@ -513,6 +513,15 @@
       font-size: 0.98rem;
     }
 
+    .patient-video-trigger {
+      width: min(100%, 400px);
+      border: none;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      display: block;
+    }
+
     .patient-video-card {
       width: min(100%, 400px);
       border-radius: 22px;
@@ -520,16 +529,116 @@
       background: #fff;
       box-shadow: 0 14px 26px rgba(20, 63, 107, 0.12);
       padding: 10px;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .patient-video-card video {
+    .patient-video-card img {
       width: 100%;
       display: block;
       border-radius: 16px;
       border: 1px solid #e2eaf3;
-      background: #000;
+      background: #e8eef5;
       aspect-ratio: 9 / 19.5;
       object-fit: cover;
+    }
+
+    .patient-video-play {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(17, 25, 40, 0.76);
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+      box-shadow: 0 10px 24px rgba(17, 25, 40, 0.35);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .patient-video-trigger:hover .patient-video-card,
+    .patient-video-trigger:focus-visible .patient-video-card {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px rgba(20, 63, 107, 0.16);
+    }
+
+    .patient-video-trigger:hover .patient-video-play,
+    .patient-video-trigger:focus-visible .patient-video-play {
+      transform: scale(1.08);
+      background: rgba(12, 19, 34, 0.84);
+    }
+
+    .patient-video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background: rgba(5, 12, 24, 0.72);
+    }
+
+    .patient-video-modal[hidden] {
+      display: none;
+    }
+
+    .patient-video-dialog {
+      width: min(92vw, 420px);
+      background: #111827;
+      border-radius: 18px;
+      padding: 14px 14px 10px;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.38);
+    }
+
+    .patient-video-modal:not([hidden]) .patient-video-dialog {
+      animation: patientVideoDialogIn 0.22s ease;
+    }
+
+    @keyframes patientVideoDialogIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .patient-video-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .patient-video-dialog video {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      background: #000;
+      aspect-ratio: 9 / 19.5;
+      object-fit: contain;
+    }
+
+    @media (max-width: 480px) {
+      .patient-video-modal {
+        padding: 10px;
+      }
     }
 
     /* Pricing */
@@ -1067,15 +1176,25 @@
         <h2 id="patient-demo-title">患者側の操作イメージ</h2>
         <p class="section-intro">患者さんはLINEから数ステップで簡単に処方箋画像を送信できます。</p>
         <div class="patient-demo-wrap">
-          <div class="patient-video-card">
-            <video autoplay muted loop playsinline preload="metadata" aria-label="患者さんがLINEから処方箋画像を送信する操作イメージ動画">
-              <source src="line-prescription-demo.mp4" type="video/mp4">
-            </video>
-          </div>
+          <button class="patient-video-trigger" type="button" aria-haspopup="dialog" aria-controls="patient-video-modal" aria-label="患者側の操作イメージ動画を再生">
+            <span class="patient-video-card">
+              <img src="line-prescription-demo-thumbnail.PNG" alt="患者側の操作イメージ動画のサムネイル" loading="lazy">
+              <span class="patient-video-play" aria-hidden="true">▶</span>
+            </span>
+          </button>
           <p class="patient-demo-note">患者さんが使いやすい受付の流れを、動画でご確認いただけます。</p>
         </div>
       </div>
     </section>
+
+    <div class="patient-video-modal" id="patient-video-modal" hidden>
+      <div class="patient-video-dialog" role="dialog" aria-modal="true" aria-label="患者側の操作イメージ動画" tabindex="-1">
+        <button class="patient-video-close" type="button" aria-label="動画を閉じる">×</button>
+        <video autoplay muted controls playsinline preload="metadata" aria-label="患者さんがLINEから処方箋画像を送信する操作イメージ動画">
+          <source src="line-prescription-demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
 
     <!-- Demo Section -->
     <section id="demo" class="section" aria-labelledby="demo-title">
@@ -1305,6 +1424,56 @@
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+    });
+
+    // Patient demo modal
+    const patientVideoTrigger = document.querySelector('.patient-video-trigger');
+    const patientVideoModal = document.getElementById('patient-video-modal');
+    const patientVideoClose = patientVideoModal?.querySelector('.patient-video-close');
+    const patientVideoElement = patientVideoModal?.querySelector('video');
+    const patientVideoDialog = patientVideoModal?.querySelector('.patient-video-dialog');
+    let previousFocusedElement = null;
+
+    const closePatientVideoModal = () => {
+      if (!patientVideoModal || !patientVideoElement) return;
+      patientVideoModal.hidden = true;
+      patientVideoElement.pause();
+      patientVideoElement.currentTime = 0;
+      document.body.style.overflow = '';
+      if (previousFocusedElement instanceof HTMLElement) {
+        previousFocusedElement.focus();
+      } else {
+        patientVideoTrigger?.focus();
+      }
+      previousFocusedElement = null;
+    };
+
+    patientVideoTrigger?.addEventListener('click', () => {
+      if (!patientVideoModal || !patientVideoElement) return;
+      previousFocusedElement = document.activeElement;
+      patientVideoModal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      patientVideoElement.currentTime = 0;
+      patientVideoElement.play().catch(() => {});
+      if (patientVideoClose instanceof HTMLElement) {
+        patientVideoClose.focus();
+      } else {
+        patientVideoDialog?.focus();
+      }
+    });
+
+    patientVideoClose?.addEventListener('click', closePatientVideoModal);
+
+    patientVideoModal?.addEventListener('click', (event) => {
+      if (event.target === patientVideoModal) {
+        closePatientVideoModal();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && patientVideoModal && !patientVideoModal.hidden) {
+        closePatientVideoModal();
+      }
     });
   </script>
 </body>
