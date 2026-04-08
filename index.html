@@ -685,6 +685,51 @@
       font-size: 1.03rem;
     }
 
+    .support-list {
+      gap: 10px;
+    }
+
+    .support-plan {
+      margin-top: 2px;
+      padding: 10px 12px;
+      border: 1px solid #dbe7f3;
+      border-radius: 10px;
+      background: #f8fbff;
+    }
+
+    .support-plan-label {
+      margin: 0 0 6px;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .support-plan-price {
+      margin: 0;
+      display: grid;
+      gap: 4px;
+      font-size: 0.95rem;
+    }
+
+    .support-plan-price .normal-price {
+      color: #6f8194;
+    }
+
+    .support-plan-price .campaign-price {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.08rem;
+    }
+
+    .support-notes {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 4px;
+      font-size: 0.9rem;
+      color: #5f7185;
+    }
+
     .pricing-note {
       margin: 18px 0 0;
       padding: 14px 16px;
@@ -1240,31 +1285,44 @@
             </ul>
           </article>
           <article class="pricing-card">
-            <h3>導入方法</h3>
-            <ul class="price-list">
-              <li>ご自身で設定：<strong>無料</strong></li>
-              <li>導入サポート：<strong>1時間 10,000円</strong></li>
+            <h3>初期設定サポート</h3>
+            <ul class="price-list support-list">
+              <li>ご自身で設定される場合：<strong>0円</strong></li>
+              <li class="support-plan">
+                <p class="support-plan-label">初期設定サポート（推奨）</p>
+                <p class="support-plan-price">
+                  <span class="normal-price">通常：30,000円</span>
+                  <span class="campaign-price">→ 10,000円（先着10店舗まで）</span>
+                </p>
+              </li>
+              <li>
+                <ul class="support-notes">
+                  <li>※LINE設定・印刷環境の構築までサポートします</li>
+                  <li>※ITに詳しくない方でも問題ありません</li>
+                </ul>
+              </li>
             </ul>
           </article>
           <article class="pricing-card">
             <h3>導入にあたって</h3>
             <ul class="price-list">
-              <li>ご利用には、<strong>Gmailアカウント</strong>のご準備が必要です。</li>
-              <li><strong>LINE公式アカウント</strong>（1アカウントで複数店舗対応可）のご用意が必要です。</li>
-              <li>LINE連携の設定は管理画面で順番に進められるため、専門知識がなくても進めやすい構成です。</li>
+              <li>導入時には、<strong>Gmailアカウント</strong>、<strong>LINE公式アカウント</strong>、<strong>LINE Developers設定</strong>の準備が必要です。</li>
+              <li>運用環境として、<strong>Windows PC</strong>、<strong>プリンター</strong>、<strong>インターネット接続環境</strong>をご用意ください。</li>
+              <li>初期設定は管理画面に沿って進められ、必要に応じてサポートをご利用いただけます。</li>
             </ul>
           </article>
           <article class="pricing-card">
             <h3>特徴</h3>
             <ul class="price-list">
-              <li>個人開発のため、運用コストを抑えた価格設定を目指しています。</li>
-              <li>小規模薬局でも導入しやすい料金と手順を重視しています。</li>
+              <li>個人開発だからこそ、導入しやすい価格を維持できるよう工夫しています。</li>
+              <li>価格だけでなく、現場で迷わず使える導線と運用しやすさを重視しています。</li>
+              <li>少人数・小規模薬局でも無理なく始めやすい構成です。</li>
             </ul>
           </article>
           <article class="pricing-card">
             <h3>ご確認いただきたい点</h3>
             <ul class="price-list">
-              <li>個人開発のため、対応は主に業務時間外（夜間・休日）となります。その分、継続しやすい価格帯でご利用いただけるよう調整しています。</li>
+              <li>個人開発のため、ご返信は主に業務時間外（夜間・休日）となりますが、順次丁寧に対応しています。継続しやすい価格で安心してお使いいただけるよう運用しています。</li>
             </ul>
           </article>
         </div>
@@ -1302,7 +1360,7 @@
               <span class="symbol" aria-hidden="true">＋</span>
             </button>
             <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
-              <p>LINE連携などの準備は必要ですが、管理画面から手順に沿って進められるようにしています。設定に不安がある場合は、導入サポート（1時間 10,000円）もご利用いただけます。</p>
+              <p>LINE連携などの準備は必要ですが、管理画面から手順に沿って進められるようにしています。設定に不安がある場合は、初期設定サポート（通常30,000円 → 先着10店舗まで10,000円）をご利用いただけます。</p>
             </div>
           </article>
           <article class="faq-item">
